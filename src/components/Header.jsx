@@ -20,21 +20,21 @@ export default function Header() {
           </div>
         </div>
         <nav className="nav">
-          <a href="#" className="nav-link">🏠 Home</a>
-          <a href="#" className="nav-link">📊 Nutrition</a>
-          <a href="#" className="nav-link">📖 Recipes</a>
+          <a href="#top" className="nav-link">Home</a>
+          <a href="#nutrition" className="nav-link">Nutrition guide</a>
+          <a href="#recipes" className="nav-link">Meal ideas</a>
         </nav>
       </div>
       <div className="hero-banner">
         <div className="hero-content">
           <div className="hero-badge">🇮🇳 Made for India</div>
-          <h1 className="hero-title">
-            10 Protein-Rich<br />
+          <h1 className="hero-title" id="top">
+            10 High-Protein<br />
             <span className="hero-highlight">Vegetarian Foods</span>
             <br />in India
           </h1>
           <p className="hero-subtitle">
-            Your complete guide to building strength the vegetarian way 💪
+            Compare protein in familiar Indian foods, find meal inspiration and explore practical nutrition tips.
           </p>
           <div className="hero-tags">
             <span className="hero-tag">🫘 Dal</span>

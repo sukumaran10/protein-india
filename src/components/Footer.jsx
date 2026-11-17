@@ -8,17 +8,17 @@ export default function Footer() {
           <span>🥗</span> ProteinIndia
         </div>
         <p className="footer-text">
-          Your trusted guide to vegetarian nutrition & wellness in India 🇮🇳
+          Explore vegetarian protein sources in India, from everyday dals and beans to paneer, soy and nuts.
         </p>
         <div className="footer-tags">
-          <span>💪 Protein</span>
-          <span>🌿 Vegetarian</span>
-          <span>🏋️ Fitness</span>
-          <span>❤️ Health</span>
-          <span>🇮🇳 India</span>
+          <span>Protein-rich foods</span>
+          <span>Vegetarian nutrition</span>
+          <span>Indian meal ideas</span>
+          <span>Plant protein</span>
+          <span>Nutrition guide</span>
         </div>
         <p className="footer-credit">
-          © 2024 ProteinIndia | For educational & wellness purposes only
+          © 2026 ProteinIndia | General nutrition information for educational purposes
         </p>
       </div>
     </footer>

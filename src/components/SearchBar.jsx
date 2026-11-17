@@ -7,7 +7,8 @@ export default function SearchBar({ search, setSearch }) {
         <span className="search-icon">🔍</span>
         <input
           type="text"
-          placeholder="Search foods... (e.g. Dal, Paneer, Chana)"
+          placeholder="Search vegetarian protein foods (e.g. dal, paneer, chana)"
+          aria-label="Search vegetarian protein foods by name or category"
           value={search}
           onChange={e => setSearch(e.target.value)}
           className="search-input"

@@ -230,16 +230,17 @@ export default function App() {
     <div className="app">
       <Header />
       <main className="main">
-        <div className="intro-section">
-          <h2 className="intro-title">💪 Fuel Your Body The Indian Way</h2>
+        <div className="intro-section" id="nutrition">
+          <h2 className="intro-title">A practical guide to vegetarian protein in India</h2>
           <p className="intro-text">
-            Discover the top 10 protein-rich vegetarian foods available across India —
-            affordable, delicious, and incredibly nutritious. Click any card to explore details!
+            Find high-protein vegetarian foods commonly available across India. Compare the
+            estimated protein and calories per 100 g, browse familiar Indian recipes, and
+            get simple preparation tips for dals, beans, dairy, soy, vegetables and nuts.
           </p>
           <div className="stats-row">
             <div className="stat-box">
               <span className="stat-num">10</span>
-              <span className="stat-label">Power Foods</span>
+              <span className="stat-label">Protein-rich foods</span>
             </div>
             <div className="stat-box">
               <span className="stat-num">52g</span>
@@ -256,40 +257,58 @@ export default function App() {
           </div>
         </div>
 
-        <SearchBar search={search} setSearch={setSearch} />
+        <section aria-label="Search and filter protein-rich vegetarian foods" id="foods">
+          <SearchBar search={search} setSearch={setSearch} />
 
-        <div className="category-filter">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              className={`cat-btn ${activeCategory === cat ? 'active' : ''}`}
-              onClick={() => setActiveCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+          <div className="category-filter">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                className={`cat-btn ${activeCategory === cat ? 'active' : ''}`}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
 
-        <div className="results-count">
-          Showing <strong>{filtered.length}</strong> of {foodsData.length} foods
-        </div>
+          <div className="results-count">
+            Showing <strong>{filtered.length}</strong> of {foodsData.length} foods
+          </div>
 
+          <div className="food-grid">
+            {filtered.length > 0 ? filtered.map(food => (
+              <FoodCard
+                key={food.id}
+                food={food}
+                rank={rankedFoods.findIndex(f => f.id === food.id) + 1}
+                onClick={() => setSelectedFood(food)}
+              />
+            )) : (
+              <div className="no-results">
+                <span>🔍</span>
+                <p>No foods found. Try a different search!</p>
+              </div>
+            )}
+          </div>
+        </section>
 
-        <div className="food-grid">
-          {filtered.length > 0 ? filtered.map(food => (
-            <FoodCard
-              key={food.id}
-              food={food}
-              rank={rankedFoods.findIndex(f => f.id === food.id) + 1}
-              onClick={() => setSelectedFood(food)}
-            />
-          )) : (
-            <div className="no-results">
-              <span>🔍</span>
-              <p>No foods found. Try a different search!</p>
-            </div>
-          )}
-        </div>
+        <section className="intro-section" aria-labelledby="protein-guide-title" id="recipes">
+          <h2 className="intro-title" id="protein-guide-title">How to add more protein to Indian vegetarian meals</h2>
+          <p className="intro-text">
+            Build meals around dal, chana, rajma, peas, tofu or soya chunks, and add paneer,
+            curd, peanuts or nuts where they suit your diet. Pair pulses with rice or roti for
+            a varied meal, and rotate protein sources through the week. Soak and cook dried
+            beans thoroughly, and choose portions that fit your energy needs and preferences.
+          </p>
+          <p className="intro-text">
+            Nutrition values shown here are approximate estimates per 100 g and can vary by
+            variety, brand and preparation. Dry and cooked foods have very different water
+            content, so compare like with like and check the product label when available.
+            This guide is for general education and is not a substitute for personalized
+            advice from a qualified health professional.
+          </p>
+        </section>
 
       </main>
 
